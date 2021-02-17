@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  anaconda:
+    container_name: anaconda
+    build: ./anaconda
+    tty: true
+    volumes:
+      - ../code:/code
+    ports:
+      - "8888:8888"
+    command: jupyter notebook /code/your_book.ipynb --ip 0.0.0.0 --no-browser --allow-root
